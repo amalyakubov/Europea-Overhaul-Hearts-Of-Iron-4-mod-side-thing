@@ -1,0 +1,2 @@
+recruit_character = AUS_Sebastian_Koch 
+recruit_character = AUS_caretaker_cabinet 

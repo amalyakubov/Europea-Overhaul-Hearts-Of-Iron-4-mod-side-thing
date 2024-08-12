@@ -1,0 +1,12 @@
+spriteTypes = {
+
+    spriteType = {
+        name = "GFX_portrait_AUS_Sebastian_Koch_large"
+        texturefile = "gfx/leaders/AUS/AUS_Sebastian_Koch_large.dds"
+    }
+
+    spriteType = {
+        name = "GFX_portrait_AUS_Caretaker_Cabinet_large"
+        texturefile = "gfx/leaders/AUS/AUS_Caretaker_Cabinet_large.dds"
+    }
+}

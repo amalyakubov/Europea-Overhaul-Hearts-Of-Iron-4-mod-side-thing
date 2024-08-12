@@ -1,0 +1,68 @@
+﻿add_namespace = austria 
+
+country_event =  {
+    id = austria.1
+    title = "Austrians demand Yugoslavian lands!"
+    desc = austria.1.d
+    is_triggered_only = yes
+
+    option = {
+        name = "Yugoslavs stand no chance against the might of the Habsburgs!"
+        random_list = {
+            50 = {
+                    country_event = {
+                        days = 10
+                        id = austria.2
+                    }
+            }
+            50 = {
+                    country_event = {
+                        days = 10
+                        id = austria.3
+                    }
+            }
+            
+        }
+        
+    }
+}
+
+country_event = {
+    id = austria.2
+    title = "Yugoslavia yields!"
+    desc = austria.2.d
+    is_triggered_only = yes
+
+    option = {
+        name = "Heil die Kaiser!"
+        102 = { transfer_state_to = AUS }
+        853 = { transfer_state_to = AUS }   
+        109 = { transfer_state_to = AUS }
+        45 = { transfer_state_to = AUS }
+        764 = { transfer_state_to = AUS }
+        103 = { transfer_state_to = AUS }
+        104 = { transfer_state_to = AUS }
+        804 = { transfer_state_to = AUS }
+
+    }
+}
+
+country_event = {
+    id = austria.3
+    title = "Yugoslavia will not yield!"
+    desc = austria.1.b.d
+    is_triggered_only = yes
+
+    option = {
+        name = "They will witness the entire might of the Habsburgs!"
+        create_wargoal = {
+            type = take_state_focus
+            target = YUG
+            generator = { 102 853 109 45 764 103 104 804 }
+            expire = 240
+        }
+    }
+}
+
+
+
