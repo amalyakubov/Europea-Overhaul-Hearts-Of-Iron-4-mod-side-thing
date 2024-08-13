@@ -8,7 +8,7 @@ ideas = {
             removal_cost = -1
             modifier = {
                 consumer_goods_factor = -0.1
-                production_speed_i>ndustrial_complex_factor = 0.15
+                production_speed_industrial_complex_factor = 0.15
             }
         }
         AUS_expand_our_military_industry = {
@@ -18,7 +18,59 @@ ideas = {
             }
             removal_cost = -1
             modifier = {
-                production_speed_arms_factory_factor = 0.15
+                production_speed_arms_factory_factor = 0.2
+            }
+        }
+        AUS_reformed_land_forces_command = {
+            picture = GFX_focus_generic_military_mission
+            allowed = {
+                tag = AUS
+            }
+            removal_cost = -1
+            modifier = {
+                army_org_factor = 0.05
+                max_planning_factor = 0.25
+                experience_gain_army = 0.1
+            }
+        }
+        AUS_reformed_organized_sturmbrigade = {
+            picture = GFX_focus_eng_special_air_service
+            allowed = {
+                tag = AUS
+            }
+            removal_cost = -1
+            modifier = {
+                army_attack_factor = 0.1
+            }
+        }
+        AUS_engineering_prowess = {
+            picture = GFX_focus_generic_engineering_mission
+            allowed = {
+                tag = AUS
+            }
+            removal_cost = -1
+            modifier = {
+                max_dig_in_factor = 0.25
+            }
+        }
+        AUS_reinstate_conscription = {
+            picture = GFX_focus_generic_military_mission
+            allowed = {
+                tag = AUS
+            }
+            removal_cost = -1
+            modifier = {
+                conscription_factor = 0.02
+            }
+        }
+        AUS_advance_research_into_artillery = {
+            picture = GFX_focus_generic_engineering_mission
+            allowed = {
+                tag = AUS
+            }
+            removal_cost = -1
+            modifier = {
+                breakthrough_factor = 0.1
             }
         }
     }
