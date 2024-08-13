@@ -1,4 +1,4 @@
-﻿focus_tree = {
+focus_tree = {
 	id = austria_focus
 	country = {
 		factor = 0
@@ -9,29 +9,6 @@
 	}
 	default = no
 
-    focus = {
-        id = AUS_rally_monarchists
-        icon = GFX_goal_generic_occupy_states_ongoing_war
-		relative_position_id = AUS_government_collapses
-		prerequisite = {
-			focus = AUS_government_collapses
-		}
-		mutually_exclusive = {
-			focus = AUS_proclaim_third_republic
-		}
-        x = 0
-        y = 1
-        cost = 3.5
-        ai_will_do = {
-            factor = 1
-        }
-		completion_reward = {
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.15
-			}
-		}
-    }
 	
     focus = {
         id="AUS_government_collapses" 	
@@ -46,13 +23,36 @@
 			retire_country_leader = yes
 			add_country_leader_role = {
 				character = AUS_caretaker_cabinet
-				 promote_leader = yes
-				 country_leader = {
+				promote_leader = yes
+				country_leader = {
 					ideology = centrism
-				 }
 				}
 			}
 		}
+	}
+	focus = {
+		id = AUS_rally_monarchists
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = AUS_government_collapses
+		prerequisite = {
+			focus = AUS_government_collapses
+		}
+		mutually_exclusive = {
+			focus = AUS_proclaim_third_republic
+		}
+		x = 0
+		y = 1
+		cost = 3.5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+			}
+		}
+    }	
 	focus = {
 		id = AUS_restore_rightful_rulers
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -82,7 +82,7 @@
 	}
 	focus = {
 		id = AUS_proclaim_habsburg_empire
-		icon = GFX_focus_generic_monarchy
+		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = AUS_restore_rightful_rulers }
 		relative_position_id = AUS_restore_rightful_rulers
 		x = 0
@@ -96,9 +96,8 @@
 			add_stability = 0.05
 			set_cosmetic_tag = HAB_neutrality
 		}
-		
-	}
 
+	}
 	focus = {
 		id = AUS_reclaim_bohemia_and_nistria
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -219,7 +218,7 @@
 	}
 
 	focus = {
-		id = AUS_demand_Illyria_and_Slovenia_Illyria_and_Slovenia
+		id = AUS_demand_Illyria_and_Slovenia
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = AUS_reintegrate_habsburg_lands }
 		relative_position_id = AUS_reintegrate_habsburg_lands
@@ -247,7 +246,7 @@
 		id = AUS_conquer_italian_lands
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = AUS_reintegrate_habsburg_lands }
-		relative_position_id = AUS_demand_Illyria_and_Slovenia_Illyria_and_Slovenia
+		relative_position_id = AUS_demand_Illyria_and_Slovenia
 		x = -2
 		y = 0
 		cost = 5.8
@@ -297,8 +296,6 @@
 	focus = {
 		id = AUS_restore_holy_roman_empire
 		icon = GFX_focus_generic_the_giant_wakes
-		prerequisite = { focus = AUS_reintegrate_habsburg_lands }
-		relative_position_id = AUS_reintegrate_Illyria_and_Slovenia
 		x = 10
 		y = 10
 		cost = 10
@@ -369,6 +366,71 @@
 		}
 	}
 	focus = {
+		id = AUS_add_civilian_factory_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = AUS_add_civilian_factory_1 }
+		relative_position_id = AUS_add_civilian_factory_1
+		x = 0
+		y = 1
+		cost = 4.3
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			4 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			152 = { 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			 }
+		}
+	}
+	focus = {
+		id = AUS_expand_civilian_industry_further
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = AUS_add_civilian_factory_2 }
+		relative_position_id = AUS_add_civilian_factory_2
+		x = 0
+		y = 1
+		cost = 4.3
+		mutually_exclusive = {
+			focus = AUS_expand_military_industry
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = AUS_reconstruction_of_our_industrial_heartlands
+		} 
+	}
+	focus = {
+		id = AUS_expand_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = AUS_add_civilian_factory_2 }
+		relative_position_id = AUS_add_civilian_factory_2
+		x = -2
+		y = 1
+		cost = 4.3
+		mutually_exclusive = {
+			focus = AUS_expand_civilian_industry_further
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = AUS_expand_our_military_industry
+		}
+	}
+	focus = {
 		id = AUS_expand_main_arterial_railways
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = AUS_start_civilian_industry }
@@ -384,5 +446,4 @@
 			152 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
 		}
 	}
-
 }

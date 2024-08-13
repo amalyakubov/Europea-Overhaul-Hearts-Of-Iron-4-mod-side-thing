@@ -1,0 +1,25 @@
+ideas = {
+    country = { # Necessary for the game to consider them spirits rather than a different idea type.
+        AUS_reconstruction_of_our_industrial_heartlands = {
+            picture = GFX_goal_generic_construct_civ_factory
+            allowed = {
+                tag = AUS
+            }
+            removal_cost = -1
+            modifier = {
+                consumer_goods_factor = -0.1
+                production_speed_i>ndustrial_complex_factor = 0.15
+            }
+        }
+        AUS_expand_our_military_industry = {
+            picture = GFX_goal_generic_construct_mil_factory
+            allowed = {
+                tag = AUS
+            }
+            removal_cost = -1
+            modifier = {
+                production_speed_arms_factory_factor = 0.15
+            }
+        }
+    }
+}
